@@ -1,3 +1,19 @@
+## [v1.0.0](https://github.com/docling-project/docling-mcp/releases/tag/v1.0.0) - 2025-07-22
+
+### Feature
+
+* Refine README and docs for v1 ([#49](https://github.com/docling-project/docling-mcp/issues/49)) ([`cd0b87b`](https://github.com/docling-project/docling-mcp/commit/cd0b87b5186fa7bda0f3d171a5a3a645f4b0500f))
+* Add options to starts only some toolsgroups ([#48](https://github.com/docling-project/docling-mcp/issues/48)) ([`95568ea`](https://github.com/docling-project/docling-mcp/commit/95568ead2fb0e62b5d0591aebf3195a5c7958c45))
+* (1 Tool) Locate document anchors based on content ([#40](https://github.com/docling-project/docling-mcp/issues/40)) ([`88f4916`](https://github.com/docling-project/docling-mcp/commit/88f491616da52f03760ba9bdcf52b67d68bd7549))
+
+### Breaking
+
+* refine README and docs for v1 ([#49](https://github.com/docling-project/docling-mcp/issues/49)) ([`cd0b87b`](https://github.com/docling-project/docling-mcp/commit/cd0b87b5186fa7bda0f3d171a5a3a645f4b0500f))
+
+### Documentation
+
+* Add programmatic examples with Llama Stack ([#33](https://github.com/docling-project/docling-mcp/issues/33)) ([`778f819`](https://github.com/docling-project/docling-mcp/commit/778f819f3074627bcc9a7b6650df53036561f4c7))
+
 ## [v0.4.0](https://github.com/docling-project/docling-mcp/releases/tag/v0.4.0) - 2025-07-11
 
 ### Feature
