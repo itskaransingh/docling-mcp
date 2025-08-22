@@ -64,12 +64,11 @@ def is_document_in_local_cache(
 class ConvertDocumentOutput:
     """Output of the convert_document_into_docling_document tool."""
 
-    success: Annotated[
+    from_cache: Annotated[
         bool,
         Field(
             description=(
-                "Whether the document has been successfully converted or it was already "
-                "converted and in the local cache."
+                "Whether the document was already converted in the local cache."
             )
         ),
     ]
@@ -103,7 +102,7 @@ def convert_document_into_docling_document(
     """Convert a document of any type from a URL or local path and store in local cache.
 
     This tool takes a document's URL or local file path, converts it using
-    Docling's DocumentConverter and stores the resulting Docling document in a
+    Docling's DocumentConverter, and stores the resulting Docling document in a
     local cache. It returns an output with a boolean set to True along with the
     document's unique cache key. If the document was already in the local cache,
     the conversion is skipped and the output boolean is set to False.
@@ -164,7 +163,7 @@ def convert_document_into_docling_document(
         # Clean up memory
         cleanup_memory()
 
-        return ConvertDocumentOutput(True, cache_key)
+        return ConvertDocumentOutput(False, cache_key)
 
     except Exception as e:
         logger.exception(f"Error converting document: {source}")
