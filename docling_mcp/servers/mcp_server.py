@@ -7,6 +7,7 @@ import typer
 
 from docling_mcp.logger import setup_logger
 from docling_mcp.shared import mcp
+from smithery.decorators import smithery
 
 app = typer.Typer()
 
@@ -81,6 +82,35 @@ def main(
     mcp.settings.host = host
     mcp.settings.port = port
     mcp.run(transport=transport.value)
+
+@smithery.server() 
+def create_server():
+    """Create and configure the Docling MCP server for Smithery deployment.
+    
+    Returns:
+        FastMCP: Configured server instance with all default tools loaded.
+    """
+    # Create a logger
+    logger = setup_logger()
+    
+    # Load default tools
+    tools = [*_DEFAULT_TOOLS]
+    
+    if ToolGroups.CONVERSION in tools:
+        logger.info("loading conversion tools...")
+        import docling_mcp.tools.conversion
+
+    if ToolGroups.GENERATION in tools:
+        logger.info("loading generation tools...")
+        import docling_mcp.tools.generation
+
+    if ToolGroups.MANIPULATION in tools:
+        logger.info("loading manipulation tools...")
+        import docling_mcp.tools.manipulation
+
+    logger.info("Docling MCP server created successfully")
+    
+    return mcp
 
 
 if __name__ == "__main__":

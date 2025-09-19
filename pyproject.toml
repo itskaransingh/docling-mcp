@@ -49,6 +49,7 @@ dependencies = [
     "pydantic~=2.10",
     "pydantic-settings~=2.4",
     "python-dotenv>=1.1.0",
+    "smithery>=0.1.13",
 ]
 
 [project.optional-dependencies]
@@ -227,3 +228,7 @@ parser_angular_allowed_types = "build,chore,ci,docs,feat,fix,perf,style,refactor
 parser_angular_minor_types = "feat"
 parser_angular_patch_types = "fix,perf"
 
+
+
+[tool.smithery] 
+server = "docling_mcp.mcp_server:create_server"
